@@ -170,6 +170,7 @@ def generate_shap_charts_for_first_sample(features_df, model):
     try:
         selector = model.named_steps['select']     
         xgb_model_final = model.named_steps['xgb']  
+    except AttributeError:
         print("Model does not have named steps 'select' or 'xgb'. SHAP explanation cannot be generated.")
         return None
     
