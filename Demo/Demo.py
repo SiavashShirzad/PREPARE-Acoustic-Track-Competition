@@ -373,9 +373,7 @@ def process_files(uploaded_files, recorded_audio, gender, age):
 def main():
     title = "MP3 Feature Extraction and Classification App"
     description = (
-        "Upload your MP3/WAV files or record an audio clip below. The app will extract various audio features, "
-        "take additional inputs (gender and age), and provide a visual summary of classification probabilities.\n\n"
-        "Additionally, we generate SHAP explanation charts (by feature category) for the first audio sample."
+        "Upload your MP3/WAV files or record an audio clip below. The app will extract various audio features, and classify the uploaded audio files into Normal, Mild Cognitive Impairment, and Alzheimer's Disease."
     )
 
     iface = gr.Interface(
