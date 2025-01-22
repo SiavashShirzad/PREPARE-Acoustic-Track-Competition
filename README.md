@@ -1,6 +1,6 @@
 # Project Title
 
-This repository provides a pipeline for processing audio files, extracting features, training a machine learning model, and running a Gradio-based application for inference.
+This repository provides a pipeline for processing audio files, extracting features, training a machine learning model, and running a Gradio-based application for inference for PREPARE Acoustic Track Competition regarding audio classification and detection of dementia.
 
 ---
 
@@ -26,8 +26,8 @@ requirements.txt  # List of required Python libraries
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/SiavashShirzad/PREPARE-Acoustic-Track-Competition
+   cd PREPARE-Acoustic-Track-Competition
    ```
 
 2. **Install Dependencies**
