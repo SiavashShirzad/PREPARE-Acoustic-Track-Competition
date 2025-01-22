@@ -1,0 +1,17 @@
+joblib
+pandas
+numpy
+scikit-learn
+shap
+matplotlib
+seaborn
+mutagen
+xgboost
+torchaudio
+torch
+tqdm
+opensmile
+librosa
+transformers
+gradio
+Pillow
