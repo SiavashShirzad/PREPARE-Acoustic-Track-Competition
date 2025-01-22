@@ -1,6 +1,6 @@
-# Project Title
+# Machine Learning Pipeline for Classifying Audio Files into Three Dementia Stages
 
-This repository provides a pipeline for processing audio files, extracting features, training a machine learning model, and running a Gradio-based application for inference for PREPARE Acoustic Track Competition regarding audio classification and detection of dementia.
+This repository presents a comprehensive pipeline for the classification of audio recordings into three stages of dementia. The framework includes audio preprocessing, feature extraction, machine learning model training, and deployment via a Gradio-based application. Developed for the PREPARE Acoustic Track Competition, this approach aims to advance audio-based dementia detection and classification methodologies.
 
 ---
 
