@@ -143,23 +143,51 @@ def create_bar_chart(probabilities):
 
 def categorize_feature(feature_name):
     """
-    Categorize each feature into broad groups:
-    - Wav2Vec
-    - Whisper
-    - OpenSMILE
-    - Age
-    - Gender
+    Categorize features into meaningful groups for SHAP analysis.
     """
+    # Wav2Vec and Whisper embeddings
     if feature_name.startswith('Embedding1_'):
-        return 'Wav2Vec'
+        return 'Wav2Vec2'
     elif feature_name.startswith('Embedding2_'):
         return 'Whisper'
+
+    # Demographics
     elif 'age' in feature_name.lower():
         return 'Age'
     elif 'gender' in feature_name.lower():
         return 'Gender'
+
+    # Prosodic features
+    elif any(term in feature_name.lower() for term in ['pitch', 'rate', 'pause']):
+        return 'Prosody'
+
+    # Energy-related features
+    elif any(term in feature_name.lower() for term in ['loudness', 'shimmer', 'rms', 'energy']):
+        return 'Energy'
+
+    # Spectral features
+    elif any(term in feature_name.lower() for term in ['mfcc', 'spectral', 'flux', 'centroid', 'rolloff']):
+        return 'Spectral'
+
+    # Formant frequencies
+    elif 'formant' in feature_name.lower():
+        return 'Formants'
+
+    # Voice quality features
+    elif any(term in feature_name.lower() for term in ['jitter', 'hnr', 'breathiness', 'tremor']):
+        return 'Voice Quality'
+
+    # Temporal features
+    elif any(term in feature_name.lower() for term in ['duration', 'silence', 'ratio']):
+        return 'Temporal'
+
+    # Emotional prosody
+    elif any(term in feature_name.lower() for term in ['hammarberg', 'alpha', 'variance']):
+        return 'Emotional Prosody'
+
+    # Other OpenSMILE features
     else:
-        return 'OpenSMILE'
+        return 'Other OpenSMILE'
 
 def generate_shap_charts_for_first_sample(features_df, model):
     """
@@ -204,11 +232,17 @@ def generate_shap_charts_for_first_sample(features_df, model):
     unique_categories = sorted(list(set(feature_categories)))
     
     category_palette = {
-        'Wav2Vec': '#1f77b4', 
-        'Whisper': '#ff7f0e',  
-        'OpenSMILE': '#2ca02c',
-        'Age': '#9467bd',       
-        'Gender': '#8c564b'     
+    'Wav2Vec2': '#1f77b4',   
+    'Whisper': '#ff7f0e',   
+    'Age': '#2ca02c',            
+    'Gender': '#d62728',        
+    'Other OpenSMILE': '#9467bd',         
+    'Energy':'#9467bd',
+    'Prosody':'#9467bd',
+    'Emotional Prosody':'#9467bd',
+    'Spectral':'#9467bd',
+    'Voice Quality':'#9467bd',
+    'Temporal':'#9467bd', 
     }
     for cat in unique_categories:
         if cat not in category_palette:

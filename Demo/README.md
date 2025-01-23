@@ -29,7 +29,7 @@ This Gradio-based application classifies audio recordings into three categories:
 - **Explainability**:
   - Provides insights into how input features influenced predictions.
 
-    ![alt text](images/image-2.png)
+    ![alt text](image.png)
 
 ---
 
