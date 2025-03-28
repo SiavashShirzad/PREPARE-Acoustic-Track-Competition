@@ -48,6 +48,7 @@ requirements.txt  # List of required Python libraries
 
 ### 1. **Feature Extraction**
    Extract features from both training and testing audio files using the `FeatureExtraction.ipynb` notebook.
+   Training and Testing features should be extracted seperatly by setting the dataType variable in this notebook to train and test and running the notebook for each.
    
    - Open the notebook:
      ```bash
