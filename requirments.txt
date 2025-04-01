@@ -6,8 +6,7 @@ shap
 matplotlib
 seaborn
 mutagen
-xgboost
-torchaudio
+torchaudio==2.6.0
 torch
 tqdm
 opensmile
@@ -15,3 +14,4 @@ librosa
 transformers
 gradio
 Pillow
+xgboost

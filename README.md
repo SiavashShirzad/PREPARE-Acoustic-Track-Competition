@@ -17,6 +17,7 @@ test_audios/   # Directory for raw test audio files
 FeatureExtraction.ipynb  # Script for extracting features from audio files
 training.ipynb  # Script for training the model
 validation.ipynb  # Script for validating the model
+inference.ipynb # notebook to run the model and the analysis on data other than training and validation datasets.
 requirements.txt  # List of required Python libraries
 ```
 
@@ -31,10 +32,21 @@ requirements.txt  # List of required Python libraries
    ```
 
 2. **Install Dependencies**
-   Ensure you have Python installed on your system. Install the required Python libraries by running:
+
+   Ensure you have Python and ipynb-kernel(jupyter) installed on your system. Install the required Python libraries by running in the environment:
    ```bash
    pip install -r requirements.txt
    ```
+   or
+   for each notebook there is a cell (first cell) containing this code which will install the dependencies required for the code:
+   ```bash
+   pip install -r requirements.txt
+   ```
+   If using conda install jupyter using:
+   ```bash
+   conda install ipykernel
+   ```
+   
 
 3. **Download and Extract Data**
    - Download the raw audio data and extract the files into the corresponding directories:
@@ -85,6 +97,17 @@ requirements.txt  # List of required Python libraries
      ```
    - This will start a local server and open a Gradio interface in your browser, where you can test the model with audio inputs.
 
+---
+
+### **Inferencing new audio files**
+   Use the `inference.ipynb` notebook you can run the model on a folder containing a set of audio files.
+
+   - Ensure the trained model (`model.joblib`) is available in the `Model/` directory.
+   - Ensure ipykernel is installed
+   - Ensure the metadata file is available and all the audio files are in a folder.
+   - change the adress variables inside the notebook to the desired directories and run thm all.
+   - the results will be saved in inference_results.csv file.
+   - Feature extraction is included in this code and there is no need to run it.
 ---
 
 ## Additional Notes
